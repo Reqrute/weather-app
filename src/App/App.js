@@ -1,6 +1,8 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { Container } from '../components/Container/index.tsx'
+import { ErrorBoundary } from 'react-error-boundary'
+import { Error, ErrorHandler } from '../components/Common/Error/Error'
+import { Container } from '../components/Container/index.jsx'
 
 import {
   dayTheme
@@ -8,10 +10,12 @@ import {
 
 export const App = () => {
   return (
+    <ErrorBoundary FallbackComponent={Error} onError={ErrorHandler}>
         <ThemeProvider
           theme={dayTheme}>
           <Container/>
         </ThemeProvider>
+    </ErrorBoundary>
   )
 }
 
