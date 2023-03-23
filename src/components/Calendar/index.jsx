@@ -1,10 +1,11 @@
 // import React, { useEffect, useState } from 'react'
 import React from 'react'
 import { Button } from '../../constants/style/styled'
+import { CalendarBox } from './styled'
 
 export const Calendar = () => {
   return (
-    <div>
+    <CalendarBox>
      <div>
       <Button>
         Sign In
@@ -14,6 +15,6 @@ export const Calendar = () => {
       </Button>
       </div>
       <div></div>
-    </div>
+    </CalendarBox>
   )
 }

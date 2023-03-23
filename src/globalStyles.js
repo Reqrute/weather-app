@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import img from './assets/image/day.jpg'
 
 import theme from './theme'
 
@@ -9,7 +8,7 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     
-    font-family: ${theme.font};
+    font: ${theme.font};
   }
   html, body {
     width: 100%;
@@ -21,18 +20,14 @@ export default createGlobalStyle`
       height: 100%;
     }
   }
-  body {
+  #root {
+    background-image:url( ${props => props.theme.backgroundImage});
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-image: url('${img}');
-    background-attachment: fixed;
+    background-repeat: no-repeat; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-  }
-  #root {
     display: flex;
   }
   `

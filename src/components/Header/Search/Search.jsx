@@ -1,13 +1,14 @@
 import React from 'react'
 import { Button } from '../../../constants/style/styled'
+import { SearchBlock, Input } from './styled'
 
 export const Search = () => {
   return (
-    <div>
-     <input type={'text'}/>
-      <Button>
+    <SearchBlock>
+     <Input type={'text'}/>
+      <Button style={{ margin: 'auto' }}>
         Search
       </Button>
-    </div>
+    </SearchBlock>
   )
 }

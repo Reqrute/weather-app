@@ -1,6 +1,8 @@
 // import { css } from 'styled-components'
+import img from './assets/image/day.jpg'
+import img1 from './assets/image/day1.jpg'
 
-const font = 'sans-serif'
+const font = '1.1em "Fira Sans", sans-serif'
 
 // Color palette
 const black = '#000000'
@@ -16,11 +18,12 @@ const boxShadows = [
   'box-shadow: 0px 4px 24px -8px rgba(0,0,0,0.75)'
 ]
 
+let backgroundImage
+
 export default {
   boxShadows,
   font,
-  spaces: [0, 4, 8, 16, 32, 64, 128],
-  fontSizes: [12, 14, 16, 20, 24, 32, 40, 56, 72, 80],
+  backgroundImage,
   colors: {
     primary,
     secondary,
@@ -36,8 +39,22 @@ export default {
 export const dayTheme = {
   boxShadows,
   font,
-  spaces: [0, 4, 8, 16, 32, 64, 128],
-  fontSizes: [12, 14, 16, 20, 24, 32, 40, 56, 72, 80, 64],
+  backgroundImage: `${img}`,
+  colors: {
+    white,
+    primary: white,
+    secondary,
+    secondaryLight,
+    grey,
+    darkGrey,
+    black
+  }
+}
+
+export const daySTheme = {
+  boxShadows,
+  font,
+  backgroundImage: `${img1}`,
   colors: {
     white,
     primary: white,

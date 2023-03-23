@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 
 export const Title = () => {
   const [date, useDate] = useState('')
-
-  const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
+  const first = {
     hour: 'numeric',
     minute: 'numeric'
+  }
+
+  const second = {
+    year: 'numeric',
+    month: 'long'
   }
 
   useEffect(() => {
@@ -18,6 +18,9 @@ export const Title = () => {
   }, [])
 
   return (
-        <h1>{date.toLocaleString('en-US', options)}</h1>
+    <div>
+        <h1>{date.toLocaleString('en-US', first)}</h1>
+        <h2>{date.toLocaleString('en-US', { weekday: 'long' })}, {date.toLocaleString('en-US', { day: 'numeric' })} {date.toLocaleString('en-US', second)}</h2>
+    </div>
   )
 }
