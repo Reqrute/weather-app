@@ -11,3 +11,8 @@ export const Button = styled.button`
   border-radius: 10px;
   margin-right: 1.5rem;
 `
+
+export const WearherPicture = styled.img`
+  width: 90px;
+  height: 90px;
+`

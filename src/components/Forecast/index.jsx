@@ -1,20 +1,19 @@
-import React from 'react'
-// import { useDispatch, useSelector } from 'react-redux'
-// import { onAsyncIncrement, onDecrement } from '../../store/actions/countAction'
+import React, { useState } from 'react'
 import { Button } from '../../constants/style/styled'
 import { ForecastContainer, ButtonContainer } from './styled'
 import { Daily } from './Daily/Daily'
+import { Hourly } from './Hourly/Hourly'
 
 export const Forecast = () => {
+  const [show, setShow] = useState(false)
   return (
     <>
     <ButtonContainer>
-
-    <Button>Daily</Button>
-    <Button>Hourly</Button>
+    <Button onClick={() => setShow(false)}>Daily</Button>
+    <Button onClick={() => setShow(true)}>Hourly</Button>
     </ButtonContainer>
     <ForecastContainer>
-    <Daily/>
+    {show ? <Hourly/> : <Daily/>}
     </ForecastContainer>
     </>
   )
