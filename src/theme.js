@@ -1,6 +1,10 @@
 // import { css } from 'styled-components'
-import img from './assets/image/day.jpg'
-import img1 from './assets/image/day1.jpg'
+import Clouds from './assets/image/Clouds.jpg'
+import Rain from './assets/image/Rain.jpg'
+import Sun from './assets/image/Sun.jpg'
+import Snow from './assets/image/Snow.jpg'
+import Thunderstorm from './assets/image/Thunderstorm.jpg'
+import Mist from './assets/image/Mist.jpg'
 
 const font = '1.1em "Fira Sans", sans-serif'
 
@@ -36,10 +40,24 @@ export default {
   }
 }
 
-export const dayTheme = {
+export const SunTheme = {
   boxShadows,
   font,
-  backgroundImage: `${img}`,
+  backgroundImage: `${Sun}`,
+  colors: {
+    white,
+    primary: white,
+    secondary,
+    secondaryLight,
+    grey,
+    darkGrey,
+    black
+  }
+}
+export const MistTheme = {
+  boxShadows,
+  font,
+  backgroundImage: `${Mist}`,
   colors: {
     white,
     primary: white,
@@ -51,10 +69,53 @@ export const dayTheme = {
   }
 }
 
-export const daySTheme = {
+export const ThunderstormTheme = {
   boxShadows,
   font,
-  backgroundImage: `${img1}`,
+  backgroundImage: `${Thunderstorm}`,
+  colors: {
+    white,
+    primary: white,
+    secondary,
+    secondaryLight,
+    grey,
+    darkGrey,
+    black
+  }
+}
+export const SnowTheme = {
+  boxShadows,
+  font,
+  backgroundImage: `${Snow}`,
+  colors: {
+    white,
+    primary: white,
+    secondary,
+    secondaryLight,
+    grey,
+    darkGrey,
+    black
+  }
+}
+export const RainTheme = {
+  boxShadows,
+  font,
+  backgroundImage: `${Rain}`,
+  colors: {
+    white,
+    primary: white,
+    secondary,
+    secondaryLight,
+    grey,
+    darkGrey,
+    black
+  }
+}
+
+export const CloudsTheme = {
+  boxShadows,
+  font,
+  backgroundImage: `${Clouds}`,
   colors: {
     white,
     primary: white,
