@@ -13,9 +13,8 @@ export const Title = () => {
   }
 
   useEffect(() => {
-    setInterval(() => new Date(), 1000)
-    useDate(new Date())
-  }, [])
+    setInterval(() => useDate(new Date()), 1000)
+  })
 
   return (
     <div>
