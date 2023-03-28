@@ -9,4 +9,8 @@ export const DailyElement = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 550px) {
+    height: 80%;
+    font-size:25px
+  }
  `

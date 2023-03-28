@@ -2,7 +2,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button } from '../../constants/style/styled'
-import { CalendarBox, EventBox, EventElements, EventTime, EventTitle } from './styled'
+import { CalendarBox, EventBox, EventElements, EventTime, EventTitle, ButtonBox } from './styled'
 import { startAuth, quitAuth } from '../../store/actions/calendarAction'
 
 export const Calendar = () => {
@@ -28,14 +28,14 @@ export const Calendar = () => {
 
   return (
     <CalendarBox>
-     <div style={{ marginBottom: '20px' }}>
+     <ButtonBox>
       <Button onClick={() => handleItemClick('sign-in')}>
         Sign In
       </Button>
       <Button onClick={() => handleItemClick('sign-out')}>
         Sign Out
       </Button>
-      </div>
+      </ButtonBox>
     {events ? (<EventBox>{Events}</EventBox>) : (null)}
     </CalendarBox>
   )

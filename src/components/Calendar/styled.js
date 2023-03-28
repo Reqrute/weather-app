@@ -1,10 +1,22 @@
 import styled from 'styled-components'
 
 export const CalendarBox = styled.div`
-  margin-left: 30px;
+  margin-left: 3rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  @media (max-width: 550px) {
+    flex-direction: row-reverse;
+  }
+`
+export const ButtonBox = styled.div`
+  margin-bottom: 20px;
+  @media (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
+    aligh-items: center;
+    justify-content: center;
+  }
 `
 
 export const EventBox = styled.div`

@@ -11,4 +11,9 @@ margin: auto;
   -webkit-box-sizing: padding-box;
   display: flex;
   flex-direction: column;
+  @media (max-width: 550px) {
+    flex-direction: column;
+  width: 90%;
+  height: 90%;
+  }
 `
