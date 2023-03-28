@@ -7,6 +7,8 @@ export const SearchBlock = styled.div`
   align-items:center;
 `
 export const Input = styled.input`
-    width: 60%;
+    width: 11rem;
+    height: 2rem;
+    font-size: 1.2rem;
     margin-bottom: 20px;
 `

@@ -8,6 +8,6 @@ export function initForecast (json) {
   return { type: INIT_FORECAST, payload: { ...json } }
 }
 
-export function updateForecast () {
-  return { type: UPDATE_FORECAST }
+export function updateForecast (lat, lon) {
+  return { type: UPDATE_FORECAST, lat, lon }
 }
