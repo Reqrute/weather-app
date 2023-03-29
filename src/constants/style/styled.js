@@ -16,6 +16,12 @@ export const Button = styled.button`
     width: 60px;
     height: 25px;
   }
+  &:hover {background-color: #151515}
+
+  &:active {
+  background-color: #151515;
+  transform: translateY(2px);
+}
 `
 
 export const WearherPicture = styled.img`
