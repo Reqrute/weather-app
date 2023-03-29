@@ -1,8 +1,8 @@
-// import React, { useEffect, useState } from 'react'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button } from '../../constants/style/styled'
 import { CalendarBox, EventBox, EventElements, EventTime, EventTitle, ButtonBox } from './styled'
+import { Loader } from '../Common/Loader/Loader'
 import { startAuth, quitAuth } from '../../store/actions/calendarAction'
 
 export const Calendar = () => {
@@ -36,7 +36,7 @@ export const Calendar = () => {
         Sign Out
       </Button>
       </ButtonBox>
-    {events ? (<EventBox>{Events}</EventBox>) : (null)}
+    {events ? (<EventBox>{Events || (<Loader/>)}</EventBox>) : (null)}
     </CalendarBox>
   )
 }

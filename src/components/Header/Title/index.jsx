@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Loader } from '../../Common/Loader/Loader'
 import { updateForecast } from '../../../store/actions/forecastAction'
 import { First, Second } from './styled'
 
@@ -24,8 +25,12 @@ export const Title = () => {
 
   return (
     <div>
-        <First>{date.toLocaleString('en-US', first)}</First>
-        <Second>{date.toLocaleString('en-US', { weekday: 'long' })}, {date.toLocaleString('en-US', { day: 'numeric' })} {date.toLocaleString('en-US', second)}</Second>
+    {date
+      ? (<>
+    <First>{date.toLocaleString('en-US', first)}</First>
+    <Second>{date.toLocaleString('en-US', { weekday: 'long' })}, {date.toLocaleString('en-US', { day: 'numeric' })} {date.toLocaleString('en-US', second)}</Second>
+    </>)
+      : (<Loader/>)}
     </div>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { DailyElement } from './styled'
 import { WearherPicture } from '../../../constants/style/styled'
+import { Loader } from '../../Common/Loader/Loader'
 import Clouds from '../../../assets/image/Clouds.png'
 import Rain from '../../../assets/image/Rain.png'
 import Sun from '../../../assets/image/Sun.png'
@@ -46,7 +47,7 @@ export const Hourly = () => {
 
   return (
     <>
-         {DailyElemens}
+         {daily ? (DailyElemens) : (<Loader/>)}
     </>
   )
 }

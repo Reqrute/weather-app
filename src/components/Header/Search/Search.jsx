@@ -8,10 +8,12 @@ import cities from './by-cities.json'
 
 export const Search = () => {
   const city = useSelector(state => state.forecastReducer?.city?.name)
+  const { lat, lon: lng } = useSelector(state => state.positionReducer)
+  console.log(lat, lng)
   const dispatch = useDispatch()
   const [search, useSearch] = useState('')
   const searchBtn = (e) => {
-    const result = cities.find(el => el.name === search)
+    const result = cities.find(el => el.name === search) || { lat, lng }
     dispatch(changePosition(result.lat, result.lng))
     dispatch(updateForecast(result.lat, result.lng))
     e.preventDefault()
