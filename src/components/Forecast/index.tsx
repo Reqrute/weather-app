@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from '../../constants/style/styled'
+import { Button } from '@constants/style/styled'
 import { ForecastContainer, ButtonContainer } from './styled'
 import { Daily } from './Daily/Daily'
 import { Hourly } from './Hourly/Hourly'

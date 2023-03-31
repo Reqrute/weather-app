@@ -8,7 +8,9 @@
       "resolveJsonModule": true,
       "paths": {
         "@components/*": ["components/*"],
+        "@store/*": ["store/*"],
         "@constants/*": ["constants/*"],
+        "@Common/*": ["components/Common/*"],
         "@pages/*": ["components/pages/*"],
         "@assets/*": ["assets/*"],
         "@services/*": ["services/*"]

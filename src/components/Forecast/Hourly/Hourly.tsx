@@ -1,14 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { DailyElement } from './styled'
-import { WearherPicture } from '../../../constants/style/styled'
-import { Loader } from '../../Common/Loader/Loader'
-import Clouds from '../../../assets/image/Clouds.png'
-import Rain from '../../../assets/image/Rain.png'
-import Sun from '../../../assets/image/Sun.png'
-import Snow from '../../../assets/image/Snow.png'
-import Thunderstorm from '../../../assets/image/Thunderstorm.png'
-import Mist from '../../../assets/image/Mist.png'
+import { WearherPicture } from '@constants/style/styled'
+import { Loader } from '@Common/Loader/Loader'
+import Clouds from '@assets/image/Clouds.png'
+import Rain from '@assets/image/Rain.png'
+import Sun from '@assets/image/Sun.png'
+import Snow from '@assets/image/Snow.png'
+import Thunderstorm from '@assets/image/Thunderstorm.png'
+import Mist from '@assets/image/Mist.png'
 
 export const Hourly: React.FC = () => {
   interface RootState {

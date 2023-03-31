@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Button } from '../../constants/style/styled'
+import { Button } from '@constants/style/styled'
 import { CalendarBox, EventBox, EventElements, EventTime, EventTitle, ButtonBox } from './styled'
-import { Loader } from '../Common/Loader/Loader'
-import { startAuth, quitAuth } from '../../store/actions/calendarAction'
+import { Loader } from '@Common/Loader/Loader'
+import { startAuth, quitAuth } from '@store/actions/calendarAction'
 
 export const Calendar: React.FC = () => {
   interface CalState {

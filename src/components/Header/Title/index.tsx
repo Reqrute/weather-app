@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Loader } from '../../Common/Loader/Loader'
-import { updateForecast } from '../../../store/actions/forecastAction'
+import { Loader } from '@Common/Loader/Loader'
+import { updateForecast } from '@store/actions/forecastAction'
 import { First, Second } from './styled'
 
 export const Title: React.FC = () => {

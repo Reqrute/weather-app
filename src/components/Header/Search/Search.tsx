@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Button } from '../../../constants/style/styled'
+import { Button } from '@constants/style/styled'
 import { useSelector, useDispatch } from 'react-redux'
 import { SearchBlock, Input } from './styled'
-import { updateForecast } from '../../../store/actions/forecastAction'
-import { changePosition } from '../../../store/actions/positionAction'
+import { updateForecast } from '@store/actions/forecastAction'
+import { changePosition } from '@store/actions/positionAction'
 import cities from './by-cities.json'
 
 export const Search: React.FC = () => {

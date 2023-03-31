@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { ErrorBoundary } from 'react-error-boundary'
-import { Error, ErrorHandler } from '@components/Common/Error/Error'
+import { Error, ErrorHandler } from '@Common/Error/Error'
 import GlobalStyles from '../globalStyles'
 import { Container } from '@components/Container/index'
 import {
