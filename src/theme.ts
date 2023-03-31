@@ -1,24 +1,24 @@
-// import { css } from 'styled-components'
-import Clouds from './assets/image/Clouds.jpg'
-import Rain from './assets/image/Rain.jpg'
-import Sun from './assets/image/Sun.jpg'
-import Snow from './assets/image/Snow.jpg'
-import Thunderstorm from './assets/image/Thunderstorm.jpg'
-import Mist from './assets/image/Mist.jpg'
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+import Clouds from '@assets/image/Clouds.jpg'
+import Rain from '@assets/image/Rain.jpg'
+import Sun from '@assets/image/Sun.jpg'
+import Snow from '@assets/image/Snow.jpg'
+import Thunderstorm from '@assets/image/Thunderstorm.jpg'
+import Mist from '@assets/image/Mist.jpg'
 
 const font = '1.1em "Fira Sans", sans-serif'
 
 // Color palette
-const black = '#000000'
-const white = '#ffffff'
-const error = '#c86464'
-const primary = '#c06c84'
-const secondary = '#6c5b7b'
+const black: string = '#000000'
+const white: string = '#ffffff'
+const error: string = '#c86464'
+const primary: string = '#c06c84'
+const secondary: string = '#6c5b7b'
 const secondaryLight = '#6a6b7b'
 const grey = '#808080'
 const darkGrey = '#666666'
 
-const boxShadows = [
+const boxShadows: string[] = [
   'box-shadow: 0px 4px 24px -8px rgba(0,0,0,0.75)'
 ]
 

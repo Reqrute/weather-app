@@ -3,17 +3,20 @@ import { useSelector } from 'react-redux'
 import { DailyElement, FirstDailyBox, FirstDailyText, FirstDailyWearherPicture } from './styled'
 import { Loader } from '../../Common/Loader/Loader'
 import { WearherPicture } from '../../../constants/style/styled'
-import Clouds from '../../../assets/image/Clouds.png'
-import Rain from '../../../assets/image/Rain.png'
-import Sun from '../../../assets/image/Sun.png'
-import Snow from '../../../assets/image/Snow.png'
-import Thunderstorm from '../../../assets/image/Thunderstorm.png'
-import Mist from '../../../assets/image/Mist.png'
+import Clouds from '@assets/image/Clouds.png'
+import Rain from '@assets/image/Rain.png'
+import Sun from '@assets/image/Sun.png'
+import Snow from '@assets/image/Snow.png'
+import Thunderstorm from '@assets/image/Thunderstorm.png'
+import Mist from '@assets/image/Mist.png'
 
-export const Daily = () => {
-  let arr = []
+export const Daily: React.FC = () => {
+  interface RootState {
+    forecastReducer: { list: any[] }
+  }
+  let arr: object[] | undefined = []
 
-  const handlePictureChange = selectedPicture => {
+  const handlePictureChange = (selectedPicture: string): any => {
     switch (selectedPicture) {
       case 'Clouds':
         return Clouds
@@ -30,13 +33,13 @@ export const Daily = () => {
     }
   }
 
-  const daily = useSelector(state => state.forecastReducer?.list)
-  let DailyElemens
+  const daily = useSelector((state: RootState) => state.forecastReducer?.list)
+  let DailyElemens: any
 
   arr = daily?.filter(a => a.dt_txt.split(' ')[1] === '12:00:00' && a.dt_txt.split(' ')[0] !== daily[0].dt_txt.split(' ')[0])
   arr?.unshift(daily[0])
-  if (arr) {
-    DailyElemens = arr.map((a, id) => {
+  if (arr !== undefined) {
+    DailyElemens = arr.map((a: { weather: [{ main: string }], main: { temp: number }, dt_txt: string }, id) => {
       if (id === 0) {
         return (
             <FirstDailyBox key={id}>
@@ -55,7 +58,7 @@ export const Daily = () => {
 
   return (
     <>
-        {daily ? (DailyElemens) : (<Loader/>)}
+        {(daily !== undefined) ? (DailyElemens) : (<Loader/>)}
     </>
   )
 }

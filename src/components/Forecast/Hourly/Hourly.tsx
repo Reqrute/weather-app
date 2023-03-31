@@ -10,10 +10,13 @@ import Snow from '../../../assets/image/Snow.png'
 import Thunderstorm from '../../../assets/image/Thunderstorm.png'
 import Mist from '../../../assets/image/Mist.png'
 
-export const Hourly = () => {
-  let arr = []
+export const Hourly: React.FC = () => {
+  interface RootState {
+    forecastReducer: { list: any[] }
+  }
+  let arr: object[] | undefined = []
 
-  const handlePictureChange = selectedPicture => {
+  const handlePictureChange = (selectedPicture: string): any => {
     switch (selectedPicture) {
       case 'Clouds':
         return Clouds
@@ -30,12 +33,12 @@ export const Hourly = () => {
     }
   }
 
-  const daily = useSelector(state => state.forecastReducer?.list)
-  let DailyElemens
+  const daily = useSelector((state: RootState) => state.forecastReducer?.list)
+  let DailyElemens: any
 
   arr = daily?.filter(a => a.dt_txt.split(' ')[0] === daily[0].dt_txt.split(' ')[0])
-  if (arr) {
-    DailyElemens = arr.map((a, id) => {
+  if (arr !== undefined) {
+    DailyElemens = arr.map((a: { weather: [{ main: string }], main: { temp: number }, dt_txt: string }, id) => {
       return (
         <DailyElement key={id}>
          {a.dt_txt.split(' ')[1]}
@@ -47,7 +50,7 @@ export const Hourly = () => {
 
   return (
     <>
-         {daily ? (DailyElemens) : (<Loader/>)}
+         {daily !== undefined ? (DailyElemens) : (<Loader/>)}
     </>
   )
 }

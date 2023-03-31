@@ -2,9 +2,9 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 import { ErrorBoundary } from 'react-error-boundary'
-import { Error, ErrorHandler } from '../components/Common/Error/Error'
+import { Error, ErrorHandler } from '@components/Common/Error/Error'
 import GlobalStyles from '../globalStyles'
-import { Container } from '../components/Container/index.jsx'
+import { Container } from '@components/Container/index'
 import {
   CloudsTheme,
   RainTheme,
@@ -12,9 +12,9 @@ import {
   SnowTheme,
   ThunderstormTheme,
   MistTheme
-} from '../theme.js'
+} from '../theme'
 
-const handleThemeChange = selectedTheme => {
+const handleThemeChange = (selectedTheme: string): any => {
   switch (selectedTheme) {
     case 'Clouds':
       return CloudsTheme
@@ -31,9 +31,12 @@ const handleThemeChange = selectedTheme => {
   }
 }
 
-export const App = () => {
-  let weather = useSelector(state => state?.forecastReducer?.list)
-  if (weather) weather = weather[0].weather[0].main
+export const App: React.FC = () => {
+  interface RootState {
+    forecastReducer: { list: any[] }
+  }
+  let weather: any[] | any = useSelector((state: RootState) => state?.forecastReducer?.list)
+  if (weather !== undefined) weather = weather[0].weather[0].main
   return (
     <ThemeProvider
     theme={handleThemeChange(weather)}>

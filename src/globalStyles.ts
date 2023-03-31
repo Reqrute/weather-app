@@ -1,8 +1,13 @@
-import { createGlobalStyle } from 'styled-components'
-
+import { createGlobalStyle, type DefaultTheme } from 'styled-components'
 import theme from './theme'
+declare module 'styled-components' {
+  export interface DefaultTheme {
+    backgroundImage: string
 
-export default createGlobalStyle`
+  }
+}
+
+export default createGlobalStyle <{ theme: DefaultTheme }>`
   * {
     margin: 0;
     padding: 0;

@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import rootReducer from './reducers/index.js'
-import { updatePosition } from './actions/positionAction.js'
+import rootReducer from './reducers/index'
+import { updatePosition } from './actions/positionAction'
 
-import rootSaga from './saga/rootSaga.js'
+import rootSaga from './saga/rootSaga'
 
 const sagaMiddleware = createSagaMiddleware()
 export const store = createStore(

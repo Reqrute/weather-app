@@ -1,10 +1,10 @@
 import React from 'react'
 
-// interface ErrorProps {
-//   error: Error;
-// }
+interface ErrorProps {
+  error: Error
+}
 
-export const Error = (error) => {
+export const Error: React.FC = ({ error }: ErrorProps) => {
   return (
     <>
       <div className="error-container">
@@ -16,8 +16,7 @@ export const Error = (error) => {
 }
 
 export const ErrorHandler = (
-  error,
-  info
-) => {
+  error
+): void => {
   console.error(error)
 }
