@@ -2,7 +2,6 @@ import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import rootReducer from './reducers/index'
 import { updatePosition } from './actions/positionAction'
-
 import rootSaga from './saga/rootSaga'
 
 const sagaMiddleware = createSagaMiddleware()
