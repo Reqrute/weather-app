@@ -1,14 +1,16 @@
 import styled from 'styled-components'
 
 export const First = styled.h1`
-  @media (max-width: 550px) {
+  font-size:30px;
+  @media (max-width: 700px) {
     text-align: center;
-    font-size:25px;
+    font-size:20px;
   }
 `
 export const Second = styled.h2`
-  @media (max-width: 550px) {
+  font-size:30px;
+  @media (max-width: 700px) {
     text-align: center;
-    font-size:25px;
+    font-size:20px;
   }
 `

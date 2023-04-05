@@ -1,17 +1,24 @@
 import styled from 'styled-components'
 
+const black: string = 'rgba(26, 24, 47, 0.15)'
+const navyBlue: string = '#1A182F'
+const brightBlue: string = '#00008b'
+
 export const CalendarBox = styled.div`
-  margin-left: 3rem;
+  margin-left: 50px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  @media (max-width: 550px) {
+  @media (max-width: 700px) {
     flex-direction: row-reverse;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 `
 export const ButtonBox = styled.div`
   margin-bottom: 20px;
-  @media (max-width: 550px) {
+  @media (max-width: 700px) {
     display: flex;
     flex-direction: column;
     aligh-items: center;
@@ -20,8 +27,8 @@ export const ButtonBox = styled.div`
 `
 
 export const EventBox = styled.div`
-  width: 20rem;
-  height:6rem;
+  width: 500px;
+  height:100px;
   backdrop-filter: blur(3px); 
   margin-right: auto;
   flex-direction: column;
@@ -29,27 +36,45 @@ export const EventBox = styled.div`
   &::-webkit-scrollbar {
     width: 5px;
     height: 5px;
-    background-color: rgba(26, 24, 47, 0.15);
+    background-color: ${black};
     border-radius: 5px;
 }
 &::-webkit-scrollbar-thumb {
-    background: #1A182F;
+    background: ${navyBlue};
     border-radius: 5px;
 }
+@media (max-width: 700px) {
+    width: 400px;
+    height: 80px;
+  }
 `
 export const EventElements = styled.div`
   display: flex;
   margin:15px;
 `
 export const EventTime = styled.div`
-  weidth: 2.2rem;
-  height: 1rem;
-  margin-right: 2rem;
+  width: 60px;
+  height: 40px;
+  margin-right: 30px;
   border-radius:20px;
-  background-color:#00008b;
+  background-color:${brightBlue};
   color: white;
-  font-size: 0.8rem;
+  font-size: 18px;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 700px) {
+  width: 50px;
+  height: 30px;
+  font-size: 15px;   
+  }
 `
 export const EventTitle = styled.div`
-  font-size: 1rem;
+  font-size: 25px;
+  @media (max-width: 700px) {
+  font-size: 20px;
+ 
+  }
 `

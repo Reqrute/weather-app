@@ -9,18 +9,18 @@ export const ForecastContainer = styled.div`
   -webkit-box-sizing: padding-box;
   display: flex;
   justify-content: end;
-  @media (max-width: 550px) {
+  @media (max-width: 700px) {
     flex-wrap: wrap;
     width: 100%;
     height: 45%;
-    justify-content: start;
+    justify-content: space-evenly;
   }
 `
 
 export const ButtonContainer = styled.div`
   margin-top: auto;
-  margin-bottom: 0.5rem;
-  margin-right: 1rem;
+  margin-bottom: 20px;
+  margin-right: 30px;
   display: flex;
   justify-content: end;
   align-items:end;
