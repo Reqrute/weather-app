@@ -1,5 +1,6 @@
 import {
-  INIT_POSITION
+  INIT_POSITION,
+  CLEAR_POSITION
 }
   from '@constants/action'
 
@@ -12,6 +13,8 @@ export default function positionReducer (state = defaultState, action: { type: s
   switch (action.type) {
     case INIT_POSITION:
       return { ...state, lat: action.payload.lat, lon: action.payload.lon }
+    case CLEAR_POSITION:
+      return defaultState
     default:
       return state
   }

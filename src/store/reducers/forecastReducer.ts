@@ -1,5 +1,6 @@
 import {
-  INIT_FORECAST
+  INIT_FORECAST,
+  CLEAR_FORECAST
 }
   from '@constants/action'
 
@@ -9,6 +10,8 @@ export default function forecastReducer (state = defaultState, action: { type: s
   switch (action.type) {
     case INIT_FORECAST:
       return { ...state, ...action.payload }
+    case CLEAR_FORECAST:
+      return defaultState
     default:
       return state
   }

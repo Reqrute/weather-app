@@ -1,7 +1,8 @@
 import {
   INIT_POSITION,
   UPDATE_POSITION,
-  UPDATE_POSITION_NEW
+  UPDATE_POSITION_NEW,
+  CLEAR_POSITION
 }
   from '@constants/action'
 
@@ -20,4 +21,7 @@ export function changePosition (lat: number, lon: number): ActionC {
 }
 export function updatePosition (): ActionA {
   return { type: UPDATE_POSITION }
+}
+export function clearPosition (): ActionA {
+  return { type: CLEAR_POSITION }
 }

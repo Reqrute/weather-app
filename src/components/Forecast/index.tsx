@@ -9,8 +9,8 @@ export const Forecast: React.FC = () => {
   return (
     <>
     <ButtonContainer>
-    <Button onClick={() => { setShow(false) }}>Daily</Button>
-    <Button onClick={() => { setShow(true) }}>Hourly</Button>
+    <Button onClick={function (e) { setShow(false); e.preventDefault() }}>Daily</Button>
+    <Button onClick={function (e) { setShow(true); e.preventDefault() }}>Hourly</Button>
     </ButtonContainer>
     <ForecastContainer>
     {show ? <Hourly/> : <Daily/>}

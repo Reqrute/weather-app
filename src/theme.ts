@@ -6,7 +6,7 @@ import Snow from '@assets/image/Snow.jpg'
 import Thunderstorm from '@assets/image/Thunderstorm.jpg'
 import Mist from '@assets/image/Mist.jpg'
 
-const font = '1.1em "Fira Sans", sans-serif'
+const font = '25px "Fira Sans", sans-serif'
 
 // Color palette
 const black: string = '#000000'

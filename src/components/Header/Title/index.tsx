@@ -3,13 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Loader } from '@Common/Loader/Loader'
 import { updateForecast } from '@store/actions/forecastAction'
 import { First, Second } from './styled'
+import { type PositionState } from './interface'
 
 export const Title: React.FC = () => {
-  interface RootState {
-    positionReducer: { lat: number
-      lon: number }
-  }
-  const Cord = useSelector((state: RootState) => state.positionReducer)
+  const Cord = useSelector((state: PositionState) => state.positionReducer)
   const dispatch = useDispatch()
   const [date, useDate] = useState<string | undefined | Date | boolean>()
   const first: Intl.DateTimeFormatOptions = {

@@ -12,7 +12,7 @@ import {
 }
   from '@constants/types/index'
 
-export function uploadEvent (json: any): ActionB {
+export function uploadEvent (json: object): ActionB {
   return { type: UPLOAD_EVENT, payload: { ...json } }
 }
 

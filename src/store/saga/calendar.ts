@@ -1,7 +1,7 @@
 import { put, takeEvery, call } from 'redux-saga/effects'
 import { uploadEvent, clearEvent } from '../actions/calendarAction'
 import ApiCalendar from 'react-google-calendar-api'
-declare const window: any
+declare const window
 
 const config = {
   clientId: '791850112231-e02qk8d9ml56uecikh9i5vbce1vnffos',
@@ -16,8 +16,8 @@ const config = {
 const apiCalendar = new ApiCalendar(config)
 
 export function * eventUpload (): Iterator<object> {
-  const Auth = async (): Promise<any> => {
-    await new Promise((resolve, reject) => {
+  const Auth = async (): Promise<object> => {
+    return await new Promise((resolve, reject) => {
       const gapi = window.gapi
       gapi.load('client:auth2', () => {
         gapi.client.init(config)
@@ -38,7 +38,11 @@ export function * eventUpload (): Iterator<object> {
     })
   }
 
-  const json = yield call(Auth)
+  const json: any = yield call(Auth)
+  json.items = json.items.sort((a, b) => +new Date(a.start.dateTime) - +new Date(b.start.dateTime)).map((a) => {
+    return { title: a.summary, time: `${new Date(a.start.dateTime).getHours()}:${new Date(a.start.dateTime).getMinutes() === 0 ? ('00') : (new Date(a.start.dateTime).getMinutes())}` }
+  })
+  console.log(json)
   yield put(uploadEvent(json))
 }
 
