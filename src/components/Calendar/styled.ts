@@ -27,8 +27,8 @@ export const ButtonBox = styled.div`
 `
 
 export const EventBox = styled.div`
-  width: 500px;
-  height:100px;
+  width: 60%;
+  height:50%;
   backdrop-filter: blur(3px); 
   margin-right: auto;
   flex-direction: column;
