@@ -6,12 +6,12 @@ export const DailyElement = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (max-width: 700px) {
-    margin: auto 15px ;
-    height: 50%;
-    width: 15%;
-    font-size:20px;
-  }
+  animation: fade 1s linear;
+@keyframes fade {
+  0% { opacity: 0 }
+  50% { opacity: 0.5 }
+  100% { opacity: 1 }
+}
  `
 export const FirstDailyBox = styled.div`
   margin: auto auto auto 30px;
@@ -19,6 +19,12 @@ export const FirstDailyBox = styled.div`
   height: 80%;
   display: flex;
   align-items: center;
+  animation: fade 1s linear;
+@keyframes fade {
+  0% { opacity: 0 }
+  50% { opacity: 0.5 }
+  100% { opacity: 1 }
+}
   @media (max-width: 940px) {
     height: 80%;
     width: 1fr;
