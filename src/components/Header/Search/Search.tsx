@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { SearchBlock, Input, SearchBtn } from './styled'
-import { updateForecast } from '@store/actions/forecastAction'
+import { updateForecast, isLoad } from '@store/actions/forecastAction'
 import { changePosition } from '@store/actions/positionAction'
 import { type CityState, type PositionState } from './interface'
 import cities from './by-cities.json'
@@ -14,6 +14,7 @@ export const Search: React.FC = () => {
   const [search, useSearch] = useState('')
 
   const searchBtn = (): void => {
+    dispatch(isLoad(true))
     const result: { lat: number, lng: number } = cities.find(el => el.name === search) ?? { lat, lng }
     dispatch(changePosition(result.lat, result.lng))
     dispatch(updateForecast(result.lat, result.lng))

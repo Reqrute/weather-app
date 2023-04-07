@@ -1,7 +1,8 @@
 import {
   INIT_FORECAST,
   UPDATE_FORECAST,
-  CLEAR_FORECAST
+  CLEAR_FORECAST,
+  LOAD
 }
   from '@constants/action'
 
@@ -22,4 +23,8 @@ export function updateForecast (lat: number, lon: number): ActionC {
 
 export function clearForecast (): ActionA {
   return { type: CLEAR_FORECAST }
+}
+
+export function isLoad (bool: boolean): { type: string, payload: { Load: boolean } } {
+  return { type: LOAD, payload: { Load: bool } }
 }

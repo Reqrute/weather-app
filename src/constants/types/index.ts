@@ -19,3 +19,7 @@ export interface ActionD {
     lon: number
   }
 }
+
+export interface Loading {
+  forecastReducer: { Load: boolean }
+}

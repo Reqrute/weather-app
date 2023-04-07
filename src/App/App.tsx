@@ -5,6 +5,7 @@ import ErrorBoundary from '@Common/Error/Error'
 import GlobalStyles from '../globalStyles'
 import { Container } from '@components/Container/index'
 import { type CurentWeather } from './interface'
+import { type Loading } from '@constants/types'
 import {
   CloudsTheme,
   RainTheme,
@@ -26,10 +27,10 @@ const weatherTheme = {
 
 export const App: React.FC = () => {
   const weather = useSelector((state: CurentWeather) => state?.forecastReducer?.curentWeather)
-
+  const loading: boolean = useSelector((state: Loading) => state?.forecastReducer?.Load)
   return (
     <>
-    {weather !== undefined
+    { !loading
       ? (<ThemeProvider
     theme={weatherTheme[weather]}>
     <ErrorBoundary>
