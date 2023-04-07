@@ -1,6 +1,7 @@
 import { put, takeEvery, call } from 'redux-saga/effects'
 import { uploadEvent, clearEvent } from '../actions/calendarAction'
 import ApiCalendar from 'react-google-calendar-api'
+import { type CalendarType } from './interface'
 declare const window
 
 const config = {
@@ -16,7 +17,7 @@ const config = {
 const apiCalendar = new ApiCalendar(config)
 
 export function * eventUpload (): Iterator<object> {
-  const Auth = async (): Promise<object> => {
+  const Auth = async (): Promise<CalendarType> => {
     return await new Promise((resolve, reject) => {
       const gapi = window.gapi
       gapi.load('client:auth2', () => {
@@ -38,12 +39,14 @@ export function * eventUpload (): Iterator<object> {
     })
   }
 
-  const json: any = yield call(Auth)
-  json.items = json.items.sort((a, b) => +new Date(a.start.dateTime) - +new Date(b.start.dateTime)).map((a) => {
-    return { title: a.summary, time: `${new Date(a.start.dateTime).getHours()}:${new Date(a.start.dateTime).getMinutes() === 0 ? ('00') : (new Date(a.start.dateTime).getMinutes())}` }
-  })
-  console.log(json)
-  yield put(uploadEvent(json))
+  const json = yield call(Auth)
+  if (json !== undefined) {
+    (json as CalendarType | { title: string, time: string, items }).items = (json as CalendarType).items.sort((a, b) => +new Date(a.start.dateTime) - +new Date(b.start.dateTime)).map((a) => {
+      return { title: a.summary, time: `${new Date(a.start.dateTime).getHours()}:${new Date(a.start.dateTime).getMinutes() === 0 ? ('00') : (new Date(a.start.dateTime).getMinutes())}` }
+    })
+
+    yield put(uploadEvent(json))
+  }
 }
 
 export function * eventClear (): Iterator<object> {
