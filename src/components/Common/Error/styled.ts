@@ -8,13 +8,13 @@ export const ErrorContainer = styled.div`
     text-align: center;
     `
 export const ErrorTitle = styled.div`
-      color: grey;
+      color: ${({ theme }) => theme.colors.error};
       font-family: "Barlow", sans-serif;
       font-size: 40px;
       font-weight: 700;
     `
 export const ErrorMessage = styled.div`
-    color: grey;
+    color: ${({ theme }) => theme.colors.error};
     font-family: "Barlow", sans-serif;
     font-size: 40px;
 

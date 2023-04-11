@@ -23,3 +23,7 @@ export interface ActionD {
 export interface Loading {
   forecastReducer: { Load: boolean }
 }
+
+export interface CurentTheme {
+  themeReducer: { theme: string }
+}

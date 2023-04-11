@@ -12,3 +12,6 @@ export const UPLOAD_EVENT: string = 'UPLOAD_EVENT'
 export const QUIT_FROM_CALENDAR: string = 'QUIT_FROM_CALENDAR'
 export const CLEAR_FORECAST: string = 'CLEAR_FORECAST'
 export const LOAD: string = 'LOAD'
+
+export const THEME_CHANGE: string = 'THEME_CHANGE'
+export const THEME_SWAP: string = 'THEME_SWAP'

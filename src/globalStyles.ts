@@ -1,18 +1,11 @@
 import { createGlobalStyle, type DefaultTheme } from 'styled-components'
 import theme from './theme'
-declare module 'styled-components' {
-  export interface DefaultTheme {
-    backgroundImage: string
-
-  }
-}
 
 export default createGlobalStyle <{ theme: DefaultTheme }>`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
     font: ${theme.font};
   }
   html, body {

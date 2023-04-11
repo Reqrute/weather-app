@@ -5,18 +5,33 @@ import Sun from '@assets/image/Sun.jpg'
 import Snow from '@assets/image/Snow.jpg'
 import Thunderstorm from '@assets/image/Thunderstorm.jpg'
 import Mist from '@assets/image/Mist.jpg'
+declare module 'styled-components' {
+  export interface DefaultTheme {
+    backgroundImage?: string
+    colors: {
+      whiteBack: string
+      buttonEffect: string
+      error: string
+      black: string
+      white: string
+      brightBlue: string
+      blackBack: string
+    }
 
-const font = '25px "Fira Sans", sans-serif'
+  }
+}
+
+const font: string = '25px "Fira Sans", sans-serif'
 
 // Color palette
 const black: string = '#000000'
 const white: string = '#ffffff'
 const error: string = '#c86464'
-const primary: string = '#c06c84'
-const secondary: string = '#6c5b7b'
-const secondaryLight = '#6a6b7b'
-const grey = '#808080'
-const darkGrey = '#666666'
+const brightBlue: string = '#00008b'
+const blackBack: string = 'rgba(26, 24, 47, 0.15)'
+const whiteBack: string = 'rgba(255,255,255,0.2)'
+const buttonEffect: string = '#151515'
+const buttonEffectAlt: string = '#eaeaea'
 
 const boxShadows: string[] = [
   'box-shadow: 0px 4px 24px -8px rgba(0,0,0,0.75)'
@@ -29,100 +44,60 @@ export default {
   font,
   backgroundImage,
   colors: {
-    primary,
-    secondary,
-    secondaryLight,
+    error,
     black,
     white,
-    grey,
-    darkGrey,
-    error
+    brightBlue,
+    blackBack,
+    whiteBack,
+    buttonEffect
+
   }
 }
 
 export const SunTheme = {
-  boxShadows,
-  font,
-  backgroundImage: `${Sun}`,
-  colors: {
-    white,
-    primary: white,
-    secondary,
-    secondaryLight,
-    grey,
-    darkGrey,
-    black
-  }
+  backgroundImage: `${Sun}`
 }
 export const MistTheme = {
-  boxShadows,
-  font,
-  backgroundImage: `${Mist}`,
-  colors: {
-    white,
-    primary: white,
-    secondary,
-    secondaryLight,
-    grey,
-    darkGrey,
-    black
-  }
+  backgroundImage: `${Mist}`
 }
 
 export const ThunderstormTheme = {
-  boxShadows,
-  font,
-  backgroundImage: `${Thunderstorm}`,
-  colors: {
-    white,
-    primary: white,
-    secondary,
-    secondaryLight,
-    grey,
-    darkGrey,
-    black
-  }
+  backgroundImage: `${Thunderstorm}`
 }
+
 export const SnowTheme = {
-  boxShadows,
-  font,
-  backgroundImage: `${Snow}`,
-  colors: {
-    white,
-    primary: white,
-    secondary,
-    secondaryLight,
-    grey,
-    darkGrey,
-    black
-  }
+  backgroundImage: `${Snow}`
 }
+
 export const RainTheme = {
-  boxShadows,
-  font,
-  backgroundImage: `${Rain}`,
-  colors: {
-    white,
-    primary: white,
-    secondary,
-    secondaryLight,
-    grey,
-    darkGrey,
-    black
-  }
+  backgroundImage: `${Rain}`
 }
 
 export const CloudsTheme = {
-  boxShadows,
-  font,
-  backgroundImage: `${Clouds}`,
+  backgroundImage: `${Clouds}`
+}
+
+export const LightTheme = {
   colors: {
     white,
-    primary: white,
-    secondary,
-    secondaryLight,
-    grey,
-    darkGrey,
-    black
+    brightBlue,
+    blackBack,
+    whiteBack,
+    buttonEffect,
+    black,
+    error
+  }
+}
+
+export const DarkTheme = {
+  colors: {
+    white: black,
+    black: white,
+    brightBlue,
+    blackBack: whiteBack,
+    whiteBack: blackBack,
+    buttonEffect: buttonEffectAlt,
+    error
   }
 }

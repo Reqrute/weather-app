@@ -5,14 +5,16 @@ import ErrorBoundary from '@Common/Error/Error'
 import GlobalStyles from '../globalStyles'
 import { Container } from '@components/Container/index'
 import { type CurentWeather } from './interface'
-import { type Loading } from '@constants/types'
+import { type Loading, type CurentTheme } from '@constants/types'
 import {
   CloudsTheme,
   RainTheme,
   SunTheme,
   SnowTheme,
   ThunderstormTheme,
-  MistTheme
+  MistTheme,
+  LightTheme,
+  DarkTheme
 } from '../theme'
 import { Loader } from '@components/Common/Loader/Loader'
 
@@ -22,21 +24,23 @@ const weatherTheme = {
   Clear: SunTheme,
   Snow: SnowTheme,
   Thunderstorm: ThunderstormTheme,
-  Mist: MistTheme
+  Mist: MistTheme,
+  Light: LightTheme,
+  Dark: DarkTheme
 }
 
 export const App: React.FC = () => {
   const weather = useSelector((state: CurentWeather) => state?.forecastReducer?.curentWeather)
   const loading: boolean = useSelector((state: Loading) => state?.forecastReducer?.Load)
+  const theme: string = useSelector((state: CurentTheme) => state?.themeReducer?.theme)
   return (
     <>
     { !loading
-      ? (<ThemeProvider
-    theme={weatherTheme[weather]}>
+      ? (<ThemeProvider theme={weatherTheme[theme]}>
     <ErrorBoundary>
           <Container/>
     </ErrorBoundary>
-    <GlobalStyles />
+    <GlobalStyles theme={weatherTheme[weather]}/>
     </ThemeProvider>)
       : (<Loader/>)}
     </>

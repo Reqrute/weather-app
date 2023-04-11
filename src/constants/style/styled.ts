@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 
-const lightDark: string = '#151515'
-
 export const Button = styled.button`
   font-weight: 100;
-  color: white;
-  background: black;
+  color: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.black};
   width: 80px;
   height: 35px;
   font-size: 15px;
@@ -18,10 +16,10 @@ export const Button = styled.button`
     width: 60px;
     height: 25px;
   }
-  &:hover {background-color:${lightDark}}
+  &:hover {background-color:${({ theme }) => theme.colors.buttonEffect}}
 
   &:active {
-  background-color: ${lightDark};
+  background-color: ${({ theme }) => theme.colors.buttonEffect};
   transform: translateY(2px);
 }
 `

@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-const black: string = 'rgba(26, 24, 47, 0.15)'
-const navyBlue: string = '#1A182F'
-const brightBlue: string = '#00008b'
-
 export const CalendarBox = styled.div`
   margin-left: 50px;
   display: flex;
@@ -36,11 +32,11 @@ export const EventBox = styled.div`
   &::-webkit-scrollbar {
     width: 5px;
     height: 5px;
-    background-color: ${black};
+    background-color: ${({ theme }) => theme.colors.blackBack};
     border-radius: 5px;
 }
 &::-webkit-scrollbar-thumb {
-    background: ${navyBlue};
+    background: ${({ theme }) => theme.colors.white};
     border-radius: 5px;
 }
 @media (max-width: 700px) {
@@ -57,7 +53,7 @@ export const EventTime = styled.div`
   height: 40px;
   margin-right: 30px;
   border-radius:20px;
-  background-color:${brightBlue};
+  background-color:${({ theme }) => theme.colors.brightBlue};
   color: white;
   font-size: 18px;
   margin-top: auto;
