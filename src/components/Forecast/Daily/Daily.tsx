@@ -4,10 +4,12 @@ import { useSelector } from 'react-redux'
 import { DailyElement, FirstDailyBox, FirstDailyText, FirstDailyWearherPicture } from './styled'
 import { Loader } from '@Common/Loader/Loader'
 import { WearherPicture } from '@constants/style/styled'
+import { useTranslation } from 'react-i18next'
 import { type DailyListState } from './interface'
 
 export const Daily: React.FC = () => {
   const daily = useSelector((state: DailyListState) => state.forecastReducer?.dailyList)
+  const { t } = useTranslation()
 
   return (
     <>
@@ -17,12 +19,12 @@ export const Daily: React.FC = () => {
                 return (
             <FirstDailyBox key={id}>
             <FirstDailyWearherPicture alt={`${item.weather}picture`} src = {`https://openweathermap.org/img/wn/${item.icon}@2x.png`} />
-            <FirstDailyText>Today {item.temperature}°</FirstDailyText>
+            <FirstDailyText>{t('time.today')} {item.temperature}°</FirstDailyText>
            </FirstDailyBox>)
               }
               return (
         <DailyElement key={id}>
-         {item.day}
+         {t(`time.${item.day}`)}
          <WearherPicture alt={`${item.weather}picture`} src = {`https://openweathermap.org/img/wn/${item.icon}@2x.png`} />
          {item.temperature}°
        </DailyElement>)

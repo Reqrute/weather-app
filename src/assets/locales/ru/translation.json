@@ -1,0 +1,29 @@
+{
+    "calendar":{
+        "NotEvents": "Нету событий"
+    },
+    "time":{
+        "today": "Сегодня",
+        "Monday": "Понедельник",
+        "Tuesday": "Вторник",
+        "Wednesday": "Среда",
+        "Thursday": "Четверг",
+        "Friday": "Пятница",
+        "Saturday": "Суббота",
+        "Sunday": "Воскресенье",
+        "Hours": "{{val, Date_Hour}}",
+        "DayWeek": "{{val, Date_DayWeek}}",
+        "DayNumber": "{{val, Date_DayNumber}}",
+        "Rest": "{{val, Date_Rest}}"
+    },
+    "buttons":{
+        "Search": "Поиск",
+        "Sign Out": "Выход",
+        "Sign In": "Вход",
+        "Local": "Язык",
+        "Hourly": "Час",
+        "Daily": "День",
+        "Light": "Светлая",
+        "Dark": "Тёмная"
+    }
+}

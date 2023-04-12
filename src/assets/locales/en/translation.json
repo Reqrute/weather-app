@@ -1,0 +1,29 @@
+{
+    "calendar":{
+        "NotEvents": "Haven't events"
+    },
+    "time":{
+        "today": "Today",
+        "Monday": "Monday",
+        "Tuesday": "Tuesday",
+        "Wednesday": "Wednesday",
+        "Thursday": "Thursday",
+        "Friday": "Friday",
+        "Saturday": "Saturday",
+        "Sunday": "Sunday",
+        "Hours": "{{val, Date_Hour}}",
+        "DayWeek": "{{val, Date_DayWeek}}",
+        "DayNumber": "{{val, Date_DayNumber}}",
+        "Rest": "{{val, Date_Rest}}"
+    },
+    "buttons":{
+        "Search": "Search",
+        "Sign Out": "Sign Out",
+        "Sign In": "Sign In",
+        "Local": "Local",
+        "Hourly": "Hourly",
+        "Daily": "Daily",
+        "Light": "Light",
+        "Dark": "Dark"
+    }
+}

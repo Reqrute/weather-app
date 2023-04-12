@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Button } from '@constants/style/styled'
 import { CalendarBox, EventBox, EventElements, EventTime, EventTitle, ButtonBox } from './styled'
 import { type CalendarState } from './interface'
+import { useTranslation } from 'react-i18next'
 import { startAuth, quitAuth } from '@store/actions/calendarAction'
 
 export const Calendar: React.FC = () => {
+  const { t } = useTranslation()
   const dispatch = useDispatch()
 
   function Authorize (): void {
@@ -20,10 +22,10 @@ export const Calendar: React.FC = () => {
     <CalendarBox>
      <ButtonBox>
       <Button onClick={function (e) { Authorize(); e.preventDefault() }}>
-        Sign In
+      {t('buttons.Sign In')}
       </Button>
       <Button onClick={function (e) { Quit(); e.preventDefault() }}>
-        Sign Out
+        {t('buttons.Sign Out')}
       </Button>
       </ButtonBox>
     {events?.length !== 0 && events !== undefined
@@ -34,7 +36,7 @@ export const Calendar: React.FC = () => {
           <EventTitle>{item.title}</EventTitle>
        </EventElements>)
         })}</EventBox>)
-      : ('Haven`t events')}
+      : (t('calendar.NotEvents'))}
     </CalendarBox>
   )
 }
